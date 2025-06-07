@@ -9,7 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { TokenInterceptor } from './auth/token.interceptor';
+import { TokenInterceptor } from './core/interceptors/token.interceptor';
 
 @NgModule({
   declarations: [

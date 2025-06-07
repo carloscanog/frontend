@@ -1,0 +1,34 @@
+<div class="registro-wrapper">
+  <div class="registro-card">
+    <h1 class="logo">Tatto<span class="highlight">u</span></h1>
+    <p class="subtitulo">Rellena los siguientes datos para finalizar el registro</p>
+
+    <form #clienteForm="ngForm" (ngSubmit)="onSubmit()">
+      <input
+        type="text"
+        placeholder="Ciudad"
+        name="ciudad"
+        [(ngModel)]="ciudad"
+        #ciudadInput="ngModel"
+        required
+      />
+      <div class="error" *ngIf="ciudadInput.invalid && ciudadInput.touched">
+        La ciudad es obligatoria.
+      </div>
+
+      <input
+        type="text"
+        placeholder="Estilos e intereses (separados por comas)"
+        name="intereses"
+        [(ngModel)]="intereses"
+        #interesesInput="ngModel"
+        required
+      />
+      <div class="error" *ngIf="interesesInput.invalid && interesesInput.touched">
+        Este campo no puede estar vacío.
+      </div>
+
+      <button type="submit" [disabled]="clienteForm.invalid">Continuar</button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,61 @@
+<div class="registro-wrapper">
+  <div class="registro-card">
+    <h1 class="logo">Tatto<span class="highlight">u</span></h1>
+    <p class="subtitulo">Crea tu cuenta para continuar</p>
+
+    <form #registroForm="ngForm" (ngSubmit)="onConfirmar()">
+      <input
+        type="text"
+        placeholder="Nombre"
+        [(ngModel)]="nombre"
+        name="nombre"
+        #nombreInput="ngModel"
+        required
+      />
+      <div class="error" *ngIf="nombreInput.invalid && nombreInput.touched">
+        El nombre es obligatorio.
+      </div>
+
+      <input
+        type="text"
+        placeholder="Apellidos"
+        [(ngModel)]="apellidos"
+        name="apellidos"
+        #apellidosInput="ngModel"
+        required
+      />
+      <div class="error" *ngIf="apellidosInput.invalid && apellidosInput.touched">
+        Los apellidos son obligatorios.
+      </div>
+
+      <input
+        type="email"
+        placeholder="Correo electrónico"
+        [(ngModel)]="email"
+        name="email"
+        #emailInput="ngModel"
+        required
+        email
+      />
+      <div class="error" *ngIf="emailInput.invalid && emailInput.touched">
+        Introduce un correo válido.
+      </div>
+
+      <input
+        type="password"
+        placeholder="Contraseña"
+        [(ngModel)]="password"
+        name="password"
+        #passwordInput="ngModel"
+        required
+        minlength="6"
+      />
+      <div class="error" *ngIf="passwordInput.invalid && passwordInput.touched">
+        La contraseña debe tener al menos 6 caracteres.
+      </div>
+
+      <button type="submit" [disabled]="registroForm.invalid">Continuar</button>
+    </form>
+
+  </div>
+</div>

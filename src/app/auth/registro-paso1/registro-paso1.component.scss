@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-.login-wrapper {
+.registro-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,7 +9,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-.login-card {
+.registro-card {
   background-color: #fff;
   padding: 3rem 2.5rem;
   border-radius: 1rem;
@@ -22,7 +22,7 @@
 .logo {
   font-size: 2.5rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 
   .highlight {
     color: #28a745;

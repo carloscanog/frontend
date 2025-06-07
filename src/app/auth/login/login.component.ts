@@ -1,35 +1,38 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-login',
-  standalone: false,
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+  styleUrls: ['./login.component.scss'],
+  standalone: false
 })
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  error: string | null = null;
 
   constructor(
-    private http: HttpClient,
     private authService: AuthService,
     private router: Router
   ) {}
 
-  onSubmit() {
-    const body = { email: this.email, password: this.password };
+  onLogin(): void {
+    if (!this.email || !this.password) {
+      this.error = 'Por favor, completa todos los campos.';
+      return;
+    }
 
-    this.http.post<any>('http://localhost:8080/auth/login', body).subscribe({
+    this.authService.login({ email: this.email, password: this.password }).subscribe({
       next: (res) => {
         this.authService.saveToken(res.token);
+        this.error = null;
         this.router.navigate(['/profile']);
       },
       error: (err) => {
-        console.error('❌ Login fallido', err);
-        alert('Email o contraseña incorrectos');
+        console.error('Error al iniciar sesión:', err);
+        this.error = 'Credenciales incorrectas o servidor no disponible.';
       }
     });
   }
