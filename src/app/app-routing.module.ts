@@ -11,7 +11,7 @@ import { RegistroClienteComponent } from './auth/registro-cliente/registro-clien
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
-  { path: 'login', component: LoginComponent },
+  { path: 'auth/login', component: LoginComponent },
   { path: 'registro/paso1', component: RegistroPaso1Component },
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'registro/elegir-rol', component: ElegirRolComponent },
