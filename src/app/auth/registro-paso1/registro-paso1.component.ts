@@ -14,6 +14,7 @@ export class RegistroPaso1Component {
   apellidos = '';
   email = '';
   password = '';
+  mensajeError: string | null = null;
 
   constructor(
     private router: Router,
@@ -40,7 +41,12 @@ export class RegistroPaso1Component {
     },
     error: (err) => {
       console.error('Error al registrar usuario:', err);
-      alert('Error al registrar. Intenta más tarde.');
+
+      if (err.status === 409 && err.error?.message?.includes('email')) {
+        this.mensajeError = err.error.message;
+      } else {
+        this.mensajeError = 'Ha ocurrido un error. Intenta más tarde.';
+      }
     }
   });
   }

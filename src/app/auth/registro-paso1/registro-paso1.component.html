@@ -55,6 +55,8 @@
       </div>
 
       <button type="submit" [disabled]="registroForm.invalid">Continuar</button>
+
+      <div class="error" *ngIf="mensajeError">{{ mensajeError }}</div>
     </form>
 
   </div>
