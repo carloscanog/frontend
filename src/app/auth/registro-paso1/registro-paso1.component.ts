@@ -17,7 +17,7 @@ export class RegistroPaso1Component {
   mensajeError: string | null = null;
 
   constructor(
-    private router: Router,
+    public router: Router,
     private estadoRegistro: EstadoRegistroService,
     private authService: AuthService
   ) {}

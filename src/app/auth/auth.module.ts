@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from '../core/interceptors/auth.interceptor';
@@ -22,7 +21,6 @@ import { RouterModule } from '@angular/router';
   ],
   declarations: [
     LoginComponent,
-    RegisterComponent,
     RegistroPaso1Component,
     InicioComponent,
     ElegirRolComponent,

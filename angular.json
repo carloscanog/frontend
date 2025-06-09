@@ -41,10 +41,13 @@
                 "output": "/"
               }
             ],
-            "styles": [
-              "src/styles.scss"
-            ],
-            "scripts": []
+            "styles": [],
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -104,7 +107,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/main.scss"
             ],
             "scripts": []
           }

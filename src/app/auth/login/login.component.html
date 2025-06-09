@@ -28,8 +28,10 @@
       <div class="error" *ngIf="passwordInput.invalid && passwordInput.touched">
         La contraseña es obligatoria.
       </div>
-
-      <button type="submit" [disabled]="loginForm.invalid">Continuar</button>
+      <div class="botones-superiores">
+        <button class="boton-principal" (click)="router.navigate(['/'])">Volver</button>
+        <button class="boton-principal" [disabled]="loginForm.invalid">Continuar</button>
+      </div>
     </form>
   </div>
 </div>

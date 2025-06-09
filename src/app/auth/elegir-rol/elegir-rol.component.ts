@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { EstadoRegistroService } from '../services/estado-registro.service';
 
 @Component({
   selector: 'app-elegir-rol',
@@ -8,7 +9,10 @@ import { Router } from '@angular/router';
   standalone: false
 })
 export class ElegirRolComponent {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private estadoRegistro: EstadoRegistroService
+  ) {}
 
   elegirCliente(): void {
     this.router.navigate(['/registro/cliente']);
@@ -17,4 +21,10 @@ export class ElegirRolComponent {
   elegirTatuador(): void {
     this.router.navigate(['/registro/tatuador']);
   }
+
+  cancelar(): void {
+    this.estadoRegistro.limpiar(); // si usas limpieza de datos temporales
+    this.router.navigate(['/']);
+  }
+
 }

@@ -17,7 +17,7 @@ export class RegistroTatuadorComponent {
   tiktok = '';
 
   constructor(
-    private router: Router,
+    public router: Router,
     private estadoRegistro: EstadoRegistroService,
     private authService: AuthService
   ) {}
@@ -53,7 +53,7 @@ export class RegistroTatuadorComponent {
     next: () => {
         alert('Registro completado con éxito. Ya puedes iniciar sesión.');
         this.estadoRegistro.limpiar();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/auth/login']);
       },
       error: (err) => {
         console.error('Error en el registro de tatuador:', err);
@@ -61,4 +61,10 @@ export class RegistroTatuadorComponent {
       }
     });
   }
+
+  cancelar(): void {
+    this.estadoRegistro.limpiar(); // si usas limpieza de datos temporales
+    this.router.navigate(['/']);
+  }
+
 }

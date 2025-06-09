@@ -28,7 +28,12 @@
         Este campo no puede estar vacío.
       </div>
 
-      <button type="submit" [disabled]="clienteForm.invalid">Continuar</button>
+      <div class="botones-superiores">
+        <button class="boton-principal" (click)="router.navigate(['/registro/elegir-rol'])">Volver</button>
+        <button class="boton-principal" [disabled]="clienteForm.invalid">Continuar</button>
+      </div>
+      
+      <button class="boton-cancelar" (click)="cancelar()">Cancelar</button>
     </form>
   </div>
 </div>

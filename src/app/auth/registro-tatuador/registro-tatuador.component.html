@@ -64,4 +64,12 @@
         La biografía es obligatoria.
       </div>
 
-      <button type="submit" [disabled]="tatuadorForm.invalid">C
+      <div class="botones-superiores">
+        <button class="boton-principal" (click)="router.navigate(['/registro/elegir-rol'])">Volver</button>
+        <button class="boton-principal" [disabled]="tatuadorForm.invalid">Continuar</button>
+      </div>
+      
+      <button class="boton-cancelar" (click)="cancelar()">Cancelar</button>
+    </form>
+  </div>
+</div>

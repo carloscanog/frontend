@@ -54,10 +54,13 @@
         La contraseña debe tener al menos 6 caracteres.
       </div>
 
-      <button type="submit" [disabled]="registroForm.invalid">Continuar</button>
+      <div class="botones-superiores">
+        <button class="boton-principal" (click)="router.navigate(['/'])">Volver</button>
+        <button class="boton-principal" [disabled]="registroForm.invalid">Continuar</button>
+      </div>
 
+      <!-- Mensaje de error por si el email ya estuviera registrado -->
       <div class="error" *ngIf="mensajeError">{{ mensajeError }}</div>
     </form>
-
   </div>
 </div>

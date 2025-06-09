@@ -14,7 +14,7 @@ export class RegistroClienteComponent {
   intereses = '';
 
   constructor(
-    private router: Router,
+    public router: Router,
     private estadoRegistro: EstadoRegistroService,
     private authService: AuthService
   ) {}
@@ -41,13 +41,13 @@ export class RegistroClienteComponent {
       intereses: interesesArray
     };
 
-    console.log('📦 Enviar al backend (cliente):', datosFinales);
+    console.log('Enviar al backend (cliente):', datosFinales);
 
     this.authService.registrarCliente(datosFinales).subscribe({
       next: () => {
         alert('Registro completado con éxito. Ya puedes iniciar sesión.');
         this.estadoRegistro.limpiar();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/auth/login']);
       },
       error: (err) => {
         console.error('Error en el registro de cliente:', err);
@@ -55,4 +55,10 @@ export class RegistroClienteComponent {
       }
     });
   }
+  
+  cancelar(): void {
+    this.estadoRegistro.limpiar(); // si usas limpieza de datos temporales
+    this.router.navigate(['/']);
+  }
+
 }

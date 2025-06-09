@@ -15,7 +15,7 @@ export class LoginComponent {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    public router: Router
   ) {}
 
   onLogin(): void {
