@@ -52,4 +52,10 @@ export class AuthService {
   registrarTatuador(data: any): Observable<any> {
     return this.http.post(`${this.baseUrl}/tatuadores/registro`, data);
   }
+
+  // Eliminar usuario
+  eliminarUsuarioPorEmail(email: String): Observable<any> {
+    return this.http.delete<void>(`${this.baseUrl}/usuarios/email/${email}`)
+  }
+
 }

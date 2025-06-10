@@ -57,8 +57,21 @@ export class RegistroClienteComponent {
   }
   
   cancelar(): void {
-    this.estadoRegistro.limpiar(); // si usas limpieza de datos temporales
-    this.router.navigate(['/']);
+    const email = this.estadoRegistro.obtener()?.email;
+    if (email) {
+      this.authService.eliminarUsuarioPorEmail(email).subscribe({
+        next: () => {
+          this.estadoRegistro.limpiar();
+          this.router.navigate(['/']);
+        },
+        error: (err) => {
+          console.error('Error al eliminar usuario:', err);
+          this.router.navigate(['/']);
+        }
+      });
+    } else {
+      this.router.navigate(['/']);
+    }
   }
 
 }
