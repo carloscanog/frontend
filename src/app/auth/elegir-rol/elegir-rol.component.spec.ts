@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RegisterComponent } from './register.component';
+import { ElegirRolComponent } from './elegir-rol.component';
 
-describe('RegisterComponent', () => {
-  let component: RegisterComponent;
-  let fixture: ComponentFixture<RegisterComponent>;
+describe('ElegirRolComponent', () => {
+  let component: ElegirRolComponent;
+  let fixture: ComponentFixture<ElegirRolComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [RegisterComponent]
+      declarations: [ElegirRolComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RegisterComponent);
+    fixture = TestBed.createComponent(ElegirRolComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

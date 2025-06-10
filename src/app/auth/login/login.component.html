@@ -1,28 +1,37 @@
-<div class="container mt-5" style="max-width: 500px;">
-  <h2 class="mb-4">Login</h2>
-  <form #form="ngForm" (ngSubmit)="onSubmit()" [ngClass]="{ 'was-validated': form.submitted }" novalidate>
-    <div class="mb-3">
-      <label for="email">Email</label>
+<div class="login-wrapper">
+  <div class="login-card">
+    <h1 class="logo">Tatto<span class="highlight">u</span></h1>
+    <p class="subtitulo">Introduce tus datos para loguearte en la plataforma</p>
+
+    <form #loginForm="ngForm" (ngSubmit)="onLogin()">
       <input
         type="email"
-        id="email"
-        [(ngModel)]="email"
         name="email"
-        class="form-control"
+        placeholder="Correo electrónico"
+        [(ngModel)]="email"
+        #emailInput="ngModel"
         required
+        email
       />
-    </div>
-    <div class="mb-3">
-      <label for="password">Contraseña</label>
+      <div class="error" *ngIf="emailInput.invalid && emailInput.touched">
+        Introduce un correo válido.
+      </div>
+
       <input
         type="password"
-        id="password"
-        [(ngModel)]="password"
         name="password"
-        class="form-control"
+        placeholder="Contraseña"
+        [(ngModel)]="password"
+        #passwordInput="ngModel"
         required
       />
-    </div>
-    <button type="submit" class="btn btn-primary w-100">Iniciar sesión</button>
-  </form>
+      <div class="error" *ngIf="passwordInput.invalid && passwordInput.touched">
+        La contraseña es obligatoria.
+      </div>
+      <div class="botones-superiores">
+        <button class="boton-principal" (click)="router.navigate(['/'])">Volver</button>
+        <button class="boton-principal" [disabled]="loginForm.invalid">Continuar</button>
+      </div>
+    </form>
+  </div>
 </div>

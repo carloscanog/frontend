@@ -1,0 +1,49 @@
+@use '../../../styles/botones' as *;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+.rol-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #f8f8f8, #e6e6e6);
+  font-family: 'Poppins', sans-serif;
+}
+
+.rol-card {
+  background-color: #fff;
+  padding: 3rem 2.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  max-width: 420px;
+  width: 90%;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+
+  .highlight {
+    color: #28a745;
+    transition: text-shadow 0.3s ease;
+  }
+
+  &:hover .highlight {
+    text-shadow: 0 0 6px #28a74588;
+  }
+}
+
+.mensaje {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.botones-rol {
+  display: flex;
+  gap: 0.8rem; // antes 1.5rem, lo reducimos
+  justify-content: center;
+}
