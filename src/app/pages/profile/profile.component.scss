@@ -73,3 +73,23 @@
     }
   }
 }
+
+.upload-foto {
+  margin-top: 1.5rem;
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+
+  input[type="file"] {
+    margin-bottom: 0.5rem;
+  }
+
+  .mensaje-foto {
+    margin-top: 0.5rem;
+    font-style: italic;
+    color: #2e7d32;
+  }
+}

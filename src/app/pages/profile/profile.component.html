@@ -1,8 +1,19 @@
+<app-navbar></app-navbar>
 <div class="profile-container" *ngIf="perfil && rol">
   <div class="profile-card">
     <div class="profile-header">
       <div class="avatar-wrapper">
-        <img src="assets/icons/default-avatar.svg" alt="Avatar" class="avatar" />
+        <img [src]="perfil.fotoPerfil ? 'http://localhost:8080' + perfil.fotoPerfil : 'http://localhost:8080/uploads/usuarios/default-avatar.svg'"
+          alt="Avatar"
+          class="avatar"/>
+      </div>
+      <div class="upload-foto">
+        <label for="fotoPerfil">Actualizar foto de perfil:</label>
+        <input type="file" (change)="onFileSelected($event)">
+        <button class="edit-button" (click)="subirFoto()" [disabled]="subiendoFoto || !selectedFile">
+          {{ subiendoFoto ? 'Subiendo...' : 'Guardar imagen' }}
+        </button>
+        <p *ngIf="mensajeFoto" class="mensaje-foto">{{ mensajeFoto }}</p>
       </div>
       <div class="name-block">
         <h2 class="nombre">{{ perfil.nombre }} {{ perfil.apellidos }}</h2>

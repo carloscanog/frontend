@@ -11,6 +11,9 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
   perfil: any = null;
   rol: 'CLIENTE' | 'TATUADOR' | null = null;
+  selectedFile: File | null = null;
+  subiendoFoto: boolean = false;
+  mensajeFoto: string | null = null;
 
   constructor(
     private profileService: ProfileService,
@@ -26,6 +29,36 @@ export class ProfileComponent implements OnInit {
       },
       error: (err) => {
         console.error('Error cargando perfil:', err);
+      }
+    });
+  }
+
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+    }
+  }
+
+  subirFoto(): void {
+    if (!this.selectedFile) return;
+
+    const formData = new FormData();
+    formData.append('archivo', this.selectedFile);
+
+    this.subiendoFoto = true;
+    this.mensajeFoto = null;
+
+    this.profileService.actualizarFotoUsuario(formData).subscribe({
+      next: (res) => {
+        this.perfil.fotoPerfil = res.fotoPerfil;
+        this.mensajeFoto = 'Foto actualizada correctamente.';
+        this.subiendoFoto = false;
+      },
+      error: (err) => {
+        console.error('Error al subir la imagen:', err);
+        this.mensajeFoto = 'Error al subir la imagen.';
+        this.subiendoFoto = false;
       }
     });
   }

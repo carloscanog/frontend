@@ -1,0 +1,29 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #111;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+
+    li {
+      cursor: pointer;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #ddd;
+      }
+    }
+  }
+}

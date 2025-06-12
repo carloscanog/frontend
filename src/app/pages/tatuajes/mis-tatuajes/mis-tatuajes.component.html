@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+
+<div class="mis-tatuajes-container">
+  <div class="encabezado">
+    <h1>Mis tatuajes</h1>
+    <button class="btn-anadir" routerLink="/tatuajes/nuevo">Añadir nuevo tatuaje</button>
+  </div>
+
+  <div class="galeria">
+    <div class="tatuaje" *ngFor="let tatuaje of tatuajes">
+      <img [src]="'http://localhost:8080' + tatuaje.imagen" alt="Tatuaje" />
+      <p class="titulo">{{ tatuaje.titulo }}</p>
+    </div>
+  </div>
+</div>

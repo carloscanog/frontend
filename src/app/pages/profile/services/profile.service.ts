@@ -7,6 +7,10 @@ export class ProfileService {
     constructor(private http: HttpClient) {}
 
     obtenerPerfil(): Observable<{ rol: 'CLIENTE' | 'TATUADOR'; perfil: any }> {
-        return this.http.get<{ rol: 'CLIENTE' | 'TATUADOR'; perfil: any }>('/me');
+        return this.http.get<{ rol: 'CLIENTE' | 'TATUADOR'; perfil: any }>('/profile/me');
+    }
+
+    actualizarFotoUsuario(formData: FormData) {
+        return this.http.put<{ fotoPerfil: string }>(`/profile/foto`, formData);
     }
 }

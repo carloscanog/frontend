@@ -10,6 +10,7 @@ import { RegistroTatuadorComponent } from './auth/registro-tatuador/registro-tat
 import { RegistroClienteComponent } from './auth/registro-cliente/registro-cliente.component';
 import { EditarPerfilTatuadorComponent } from './pages/profile/editar-tatuador/editar-perfil-tatuador.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { MisTatuajesComponent } from './pages/tatuajes/mis-tatuajes/mis-tatuajes.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'registro/cliente', component: RegistroClienteComponent },
   { path: 'profile/editar', component: EditarPerfilTatuadorComponent },
   { path: 'not-found', component: NotFoundComponent },
+  { path: 'mis-tatuajes', component: MisTatuajesComponent},
   { path: '**', redirectTo: 'not-found' }
 ];
 
