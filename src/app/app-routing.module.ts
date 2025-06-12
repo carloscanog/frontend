@@ -8,6 +8,8 @@ import { RegistroPaso1Component } from './auth/registro-paso1/registro-paso1.com
 import { ElegirRolComponent } from './auth/elegir-rol/elegir-rol.component';
 import { RegistroTatuadorComponent } from './auth/registro-tatuador/registro-tatuador.component';
 import { RegistroClienteComponent } from './auth/registro-cliente/registro-cliente.component';
+import { EditarPerfilTatuadorComponent } from './pages/profile/editar-tatuador/editar-perfil-tatuador.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -16,7 +18,10 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] },
   { path: 'registro/elegir-rol', component: ElegirRolComponent },
   { path: 'registro/tatuador', component: RegistroTatuadorComponent },
-  { path: 'registro/cliente', component: RegistroClienteComponent }
+  { path: 'registro/cliente', component: RegistroClienteComponent },
+  { path: 'profile/editar', component: EditarPerfilTatuadorComponent },
+  { path: 'not-found', component: NotFoundComponent },
+  { path: '**', redirectTo: 'not-found' }
 ];
 
 @NgModule({
