@@ -20,8 +20,7 @@ export class NuevoTatuajeComponent {
   ) {
     this.form = this.fb.group({
       titulo: ['', Validators.required],
-      etiquetas: ['', Validators.required],
-      imagen: [null, Validators.required]
+      etiquetas: ['', Validators.required]
     });
   }
 

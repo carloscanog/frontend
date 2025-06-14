@@ -20,6 +20,6 @@
       accept="image/*"
     />
 
-    <button type="submit" [disabled]="form.invalid">Continuar</button>
+    <button type="submit" [disabled]="form.invalid || !imagenSeleccionada">Continuar</button>
   </form>
 </div>

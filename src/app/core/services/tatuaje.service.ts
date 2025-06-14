@@ -6,10 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TatuajeService {
+
     constructor(private http: HttpClient) {}
 
     crearTatuaje(formData: FormData): Observable<any> {
-        return this.http.post('/tatuajes', formData);
+        return this.http.post('/tatuajes/nuevo', formData);
     }
 
     obtenerMisTatuajes(): Observable<any[]> {

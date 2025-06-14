@@ -11,6 +11,7 @@ import { RegistroClienteComponent } from './auth/registro-cliente/registro-clien
 import { EditarPerfilTatuadorComponent } from './pages/profile/editar-tatuador/editar-perfil-tatuador.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { MisTatuajesComponent } from './pages/tatuajes/mis-tatuajes/mis-tatuajes.component';
+import { NuevoTatuajeComponent } from './pages/tatuajes/nuevo-tatuaje/nuevo-tatuaje.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'profile/editar', component: EditarPerfilTatuadorComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'mis-tatuajes', component: MisTatuajesComponent},
+  { path: 'tatuajes/nuevo', component: NuevoTatuajeComponent},
   { path: '**', redirectTo: 'not-found' }
 ];
 

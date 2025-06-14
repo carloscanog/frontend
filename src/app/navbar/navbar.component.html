@@ -1,9 +1,18 @@
 <nav class="navbar">
-  <div class="logo" (click)="irA('/profile')">Tattou</div>
-  <ul class="nav-links">
-    <li (click)="irA('/profile')">Perfil</li>
-    <li (click)="irA('/mis-tatuajes')">Mis tatuajes</li>
-    <li (click)="irA('/disenyos')">Mis diseños</li>
-    <li (click)="cerrarSesion()">Cerrar sesión</li>
-  </ul>
+    <div class="navbar-left">
+        <span class="logo">
+        Tatto<span class="logo-accent">u</span>
+        </span>
+        <a routerLink="/mis-tatuajes" routerLinkActive="activo">Mis tatuajes</a>
+        <a routerLink="/mis-disenyos" routerLinkActive="activo">Mis diseños</a>
+        <a routerLink="/pedidos" routerLinkActive="activo">Pedidos</a>
+    </div>
+    <div class="navbar-right">
+        <img
+        [src]="fotoPerfil"
+        alt="Foto de perfil"
+        class="profile-icon"
+        (click)="irAlPerfil()"
+        />
+    </div>
 </nav>
