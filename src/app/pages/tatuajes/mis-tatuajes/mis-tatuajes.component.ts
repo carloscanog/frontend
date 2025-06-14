@@ -14,9 +14,10 @@ export class MisTatuajesComponent implements OnInit {
     constructor(private tatuajeService: TatuajeService, private profileService: ProfileService) {}
 
     ngOnInit(): void {
-    this.tatuajeService.obtenerMisTatuajes().subscribe({
-        next: (tatuajes) => this.tatuajes = tatuajes,
-        error: (err) => console.error('Error al cargar los tatuajes:', err)
-    });
+        this.tatuajeService.obtenerMisTatuajes().subscribe({
+            next: (tatuajes) => this.tatuajes = tatuajes,
+            error: (err) => console.error('Error al cargar los tatuajes:', err)
+        });
     }
+    
 }

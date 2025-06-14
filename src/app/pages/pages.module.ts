@@ -7,16 +7,24 @@ import { NuevoTatuajeComponent } from './tatuajes/nuevo-tatuaje/nuevo-tatuaje.co
 import { MisTatuajesComponent } from './tatuajes/mis-tatuajes/mis-tatuajes.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { DetalleTatuajeComponent } from './tatuajes/detalle-tatuaje/detalle-tatuaje.component';
+import { MisDisenyosComponent } from './disenyos/mis-disenyos/mis-disenyos.component';
+import { NuevoDisenyoComponent } from './disenyos/nuevo-disenyo/nuevo-disenyo.component';
+import { DetalleDisenyoComponent } from './disenyos/detalle-disenyo/detalle-disenyo.component';
 
 
 
 @NgModule({
   declarations: [
     ProfileComponent,
+    NavbarComponent,
     EditarPerfilTatuadorComponent,
     NuevoTatuajeComponent,
     MisTatuajesComponent,
-    NavbarComponent
+    DetalleTatuajeComponent,
+    NuevoDisenyoComponent,
+    MisDisenyosComponent,
+    DetalleDisenyoComponent
   ],
   imports: [
     CommonModule,

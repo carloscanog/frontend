@@ -41,7 +41,7 @@
                 "output": "/"
               }
             ],
-            "styles": [],
+            "styles": ["src/styles/main.scss"],
             "scripts": [],
             "stylePreprocessorOptions": {
               "includePaths": [

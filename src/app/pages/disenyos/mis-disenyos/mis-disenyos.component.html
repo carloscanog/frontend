@@ -1,0 +1,15 @@
+<app-navbar></app-navbar>
+
+<div class="mis-disenyos-container">
+  <div class="encabezado">
+    <h1>Mis diseños</h1>
+    <button class="btn-anadir" routerLink="/disenyos/nuevo">Añadir nuevo diseño</button>
+  </div>
+
+  <div class="galeria">
+    <div class="disenyo" *ngFor="let disenyo of disenyos" [routerLink]="['/disenyos', disenyo.id]">
+      <img [src]="'http://localhost:8080' + disenyo.imagen" alt="Disenyo" />
+      <p class="titulo">{{ disenyo.titulo }}</p>
+    </div>
+  </div>
+</div>

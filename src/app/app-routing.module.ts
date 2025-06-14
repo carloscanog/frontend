@@ -12,6 +12,10 @@ import { EditarPerfilTatuadorComponent } from './pages/profile/editar-tatuador/e
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { MisTatuajesComponent } from './pages/tatuajes/mis-tatuajes/mis-tatuajes.component';
 import { NuevoTatuajeComponent } from './pages/tatuajes/nuevo-tatuaje/nuevo-tatuaje.component';
+import { DetalleTatuajeComponent } from './pages/tatuajes/detalle-tatuaje/detalle-tatuaje.component';
+import { MisDisenyosComponent } from './pages/disenyos/mis-disenyos/mis-disenyos.component';
+import { NuevoDisenyoComponent } from './pages/disenyos/nuevo-disenyo/nuevo-disenyo.component';
+import { DetalleDisenyoComponent } from './pages/disenyos/detalle-disenyo/detalle-disenyo.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -23,8 +27,12 @@ const routes: Routes = [
   { path: 'registro/cliente', component: RegistroClienteComponent },
   { path: 'profile/editar', component: EditarPerfilTatuadorComponent },
   { path: 'not-found', component: NotFoundComponent },
-  { path: 'mis-tatuajes', component: MisTatuajesComponent},
-  { path: 'tatuajes/nuevo', component: NuevoTatuajeComponent},
+  { path: 'mis-tatuajes', component: MisTatuajesComponent },
+  { path: 'tatuajes/nuevo', component: NuevoTatuajeComponent },
+  { path: 'tatuajes/:id', component: DetalleTatuajeComponent },
+  { path: "mis-disenyos", component: MisDisenyosComponent },
+  { path: "disenyos/nuevo", component: NuevoDisenyoComponent },
+  { path: "disenyos/:id", component: DetalleDisenyoComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 

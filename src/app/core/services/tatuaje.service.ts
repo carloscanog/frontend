@@ -14,6 +14,15 @@ export class TatuajeService {
     }
 
     obtenerMisTatuajes(): Observable<any[]> {
-        return this.http.get<any[]>('/tatuajes/mios', { withCredentials: true });
+        return this.http.get<any[]>('/tatuajes/mios');
     }
+
+    obtenerTatuajePorId(id: number): Observable<any> {
+        return this.http.get<any>(`/tatuajes/${id}`);
+    }
+
+    eliminarTatuaje(id: number): Observable<any> {
+        return this.http.delete(`/tatuajes/${id}`);
+    }
+
 }
