@@ -16,6 +16,7 @@ import { DetalleTatuajeComponent } from './pages/tatuajes/detalle-tatuaje/detall
 import { MisDisenyosComponent } from './pages/disenyos/mis-disenyos/mis-disenyos.component';
 import { NuevoDisenyoComponent } from './pages/disenyos/nuevo-disenyo/nuevo-disenyo.component';
 import { DetalleDisenyoComponent } from './pages/disenyos/detalle-disenyo/detalle-disenyo.component';
+import { MisPedidosComponent } from './pages/pedidos/mis-pedidos/mis-pedidos.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: "mis-disenyos", component: MisDisenyosComponent },
   { path: "disenyos/nuevo", component: NuevoDisenyoComponent },
   { path: "disenyos/:id", component: DetalleDisenyoComponent },
+  { path: "mis-pedidos", component: MisPedidosComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 

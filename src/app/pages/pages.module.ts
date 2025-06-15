@@ -11,6 +11,7 @@ import { DetalleTatuajeComponent } from './tatuajes/detalle-tatuaje/detalle-tatu
 import { MisDisenyosComponent } from './disenyos/mis-disenyos/mis-disenyos.component';
 import { NuevoDisenyoComponent } from './disenyos/nuevo-disenyo/nuevo-disenyo.component';
 import { DetalleDisenyoComponent } from './disenyos/detalle-disenyo/detalle-disenyo.component';
+import { MisPedidosComponent } from './pedidos/mis-pedidos/mis-pedidos.component';
 
 
 
@@ -24,7 +25,8 @@ import { DetalleDisenyoComponent } from './disenyos/detalle-disenyo/detalle-dise
     DetalleTatuajeComponent,
     NuevoDisenyoComponent,
     MisDisenyosComponent,
-    DetalleDisenyoComponent
+    DetalleDisenyoComponent,
+    MisPedidosComponent
   ],
   imports: [
     CommonModule,
