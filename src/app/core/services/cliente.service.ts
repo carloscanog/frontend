@@ -5,11 +5,11 @@ import { Observable } from "rxjs";
 @Injectable({
   providedIn: 'root'
 })
-export class TatuadorService {
+export class ClienteService {
 
     constructor(private http: HttpClient) {}
 
-    actualizarPerfil(tatuador: any): Observable<any> {
-        return this.http.put(`/tatuadores/${tatuador.id}`, tatuador);
+    actualizarPerfil(cliente: any): Observable<any> {
+        return this.http.put(`/clientes/${cliente.id}`, cliente);
     }
 }

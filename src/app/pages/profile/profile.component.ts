@@ -10,7 +10,7 @@ import { ProfileService } from '../../core/services/profile.service';
 })
 export class ProfileComponent implements OnInit {
   perfil: any = null;
-  rol: 'ROL_CLIENTE' | 'ROL_TATUADOR' | null = null;
+  rol: 'CLIENTE' | 'TATUADOR' | null = null;
   selectedFile: File | null = null;
   subiendoFoto: boolean = false;
   mensajeFoto: string | null = null;

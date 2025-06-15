@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
 export class ProfileService {
     constructor(private http: HttpClient) {}
 
-    obtenerPerfil(): Observable<{ rol: 'ROL_CLIENTE' | 'ROL_TATUADOR'; perfil: any }> {
-        return this.http.get<{ rol: 'ROL_CLIENTE' | 'ROL_TATUADOR'; perfil: any }>('/profile/me');
+    obtenerPerfil(): Observable<{ rol: 'CLIENTE' | 'TATUADOR'; perfil: any }> {
+        return this.http.get<{ rol: 'CLIENTE' | 'TATUADOR'; perfil: any }>('/profile/me');
     }
 
     actualizarFotoUsuario(formData: FormData) {

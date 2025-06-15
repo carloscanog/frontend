@@ -17,12 +17,12 @@
       </div>
       <div class="name-block">
         <h2 class="nombre">{{ perfil.nombre }} {{ perfil.apellidos }}</h2>
-        <p class="rol">({{ rol === 'ROL_TATUADOR' ? 'Tatuador/a' : 'Cliente' }})</p>
+        <p class="rol">({{ rol === 'TATUADOR' ? 'Tatuador/a' : 'Cliente' }})</p>
       </div>
     </div>
 
     <div class="profile-body">
-      <ng-container *ngIf="rol === 'ROL_TATUADOR'">
+      <ng-container *ngIf="rol === 'TATUADOR'">
         <p class="biografia">{{ perfil.biografia }}</p>
         <p><strong>Ubicación:</strong> {{ perfil.ubicacion }}</p>
         <p><strong>Estilos:</strong> {{ perfil.estilos?.join(', ') }}</p>
@@ -30,14 +30,19 @@
         <p><strong>TikTok:</strong> {{ perfil.tiktok }}</p>
       </ng-container>
 
-      <ng-container *ngIf="rol === 'ROL_CLIENTE'">
+      <ng-container *ngIf="rol === 'CLIENTE'">
         <p><strong>Ciudad:</strong> {{ perfil.ciudad }}</p>
         <p><strong>Estilos e intereses:</strong> {{ perfil.intereses?.join(', ') }}</p>
       </ng-container>
     </div>
 
     <div class="profile-footer">
-      <button class="edit-button" (click)="router.navigate(['/profile/editar'])">Editar</button>
+      <ng-container *ngIf="rol === 'TATUADOR'">
+        <button class="edit-button" (click)="router.navigate(['/profile/editar-tatuador'])">Editar</button>
+      </ng-container>
+      <ng-container *ngIf="rol === 'CLIENTE'">
+        <button class="edit-button" (click)="router.navigate(['/profile/editar-cliente'])">Editar</button>
+      </ng-container>
     </div>
   </div>
 </div>

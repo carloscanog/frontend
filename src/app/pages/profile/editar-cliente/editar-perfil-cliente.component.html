@@ -1,0 +1,18 @@
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Editar Perfil</h2>
+
+  <div>
+    <label for="ciudad">Ciudad</label>
+    <input id="ciudad" type="text" formControlName="ciudad" />
+  </div>
+
+  <div>
+    <label for="intereses">Intereses (separados por coma)</label>
+    <input id="intereses" type="text" formControlName="intereses" />
+  </div>
+
+  <div class="botones">
+    <button type="submit">Guardar Cambios</button>
+    <button type="button" (click)="cancelar()">Cancelar</button>
+  </div>
+</form>

@@ -12,6 +12,7 @@ import { MisDisenyosComponent } from './disenyos/mis-disenyos/mis-disenyos.compo
 import { NuevoDisenyoComponent } from './disenyos/nuevo-disenyo/nuevo-disenyo.component';
 import { DetalleDisenyoComponent } from './disenyos/detalle-disenyo/detalle-disenyo.component';
 import { MisPedidosComponent } from './pedidos/mis-pedidos/mis-pedidos.component';
+import { EditarPerfilClienteComponent } from './profile/editar-cliente/editar-perfil-cliente.component';
 
 
 
@@ -20,6 +21,7 @@ import { MisPedidosComponent } from './pedidos/mis-pedidos/mis-pedidos.component
     ProfileComponent,
     NavbarComponent,
     EditarPerfilTatuadorComponent,
+    EditarPerfilClienteComponent,
     NuevoTatuajeComponent,
     MisTatuajesComponent,
     DetalleTatuajeComponent,

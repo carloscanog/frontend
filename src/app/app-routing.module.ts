@@ -17,6 +17,7 @@ import { MisDisenyosComponent } from './pages/disenyos/mis-disenyos/mis-disenyos
 import { NuevoDisenyoComponent } from './pages/disenyos/nuevo-disenyo/nuevo-disenyo.component';
 import { DetalleDisenyoComponent } from './pages/disenyos/detalle-disenyo/detalle-disenyo.component';
 import { MisPedidosComponent } from './pages/pedidos/mis-pedidos/mis-pedidos.component';
+import { EditarPerfilClienteComponent } from './pages/profile/editar-cliente/editar-perfil-cliente.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -26,7 +27,8 @@ const routes: Routes = [
   { path: 'registro/elegir-rol', component: ElegirRolComponent },
   { path: 'registro/tatuador', component: RegistroTatuadorComponent },
   { path: 'registro/cliente', component: RegistroClienteComponent },
-  { path: 'profile/editar', component: EditarPerfilTatuadorComponent },
+  { path: 'profile/editar-tatuador', component: EditarPerfilTatuadorComponent },
+  { path: 'profile/editar-cliente', component: EditarPerfilClienteComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'mis-tatuajes', component: MisTatuajesComponent },
   { path: 'tatuajes/nuevo', component: NuevoTatuajeComponent },
