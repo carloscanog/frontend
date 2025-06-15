@@ -1,0 +1,60 @@
+.mis-disenyos-container {
+  background-color: #d8fbd3;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+
+  .encabezado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    .btn-anadir {
+      background-color: #6cc070;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
+  .galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 1rem;
+
+    .disenyo {
+      background-color: white;
+      border-radius: 10px;
+      padding: 0.5rem;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      img {
+        width: 100%;
+        border-radius: 6px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+      }
+
+      .titulo {
+        margin-top: 0.5rem;
+        font-weight: 600;
+      }
+    }
+  }
+}

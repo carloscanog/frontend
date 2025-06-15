@@ -1,4 +1,43 @@
-<div class="container mt-5">
-  <h2>Perfil</h2>
-  <pre>{{ user | json }}</pre>
+<app-navbar></app-navbar>
+<div class="profile-container" *ngIf="perfil && rol">
+  <div class="profile-card">
+    <div class="profile-header">
+      <div class="avatar-wrapper">
+        <img [src]="perfil.fotoPerfil ? 'http://localhost:8080' + perfil.fotoPerfil : 'http://localhost:8080/uploads/usuarios/default-avatar.svg'"
+          alt="Avatar"
+          class="avatar"/>
+      </div>
+      <div class="upload-foto">
+        <label for="fotoPerfil">Actualizar foto de perfil:</label>
+        <input type="file" (change)="onFileSelected($event)">
+        <button class="edit-button" (click)="subirFoto()" [disabled]="subiendoFoto || !selectedFile">
+          {{ subiendoFoto ? 'Subiendo...' : 'Guardar imagen' }}
+        </button>
+        <p *ngIf="mensajeFoto" class="mensaje-foto">{{ mensajeFoto }}</p>
+      </div>
+      <div class="name-block">
+        <h2 class="nombre">{{ perfil.nombre }} {{ perfil.apellidos }}</h2>
+        <p class="rol">({{ rol === 'TATUADOR' ? 'Tatuador/a' : 'Cliente' }})</p>
+      </div>
+    </div>
+
+    <div class="profile-body">
+      <ng-container *ngIf="rol === 'TATUADOR'">
+        <p class="biografia">{{ perfil.biografia }}</p>
+        <p><strong>Ubicación:</strong> {{ perfil.ubicacion }}</p>
+        <p><strong>Estilos:</strong> {{ perfil.estilos?.join(', ') }}</p>
+        <p><strong>Instagram:</strong> {{ perfil.instagram }}</p>
+        <p><strong>TikTok:</strong> {{ perfil.tiktok }}</p>
+      </ng-container>
+
+      <ng-container *ngIf="rol === 'CLIENTE'">
+        <p><strong>Ciudad:</strong> {{ perfil.ciudad }}</p>
+        <p><strong>Estilos e intereses:</strong> {{ perfil.intereses?.join(', ') }}</p>
+      </ng-container>
+    </div>
+
+    <div class="profile-footer">
+      <button class="edit-button" (click)="router.navigate(['/profile/editar'])">Editar</button>
+    </div>
+  </div>
 </div>

@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+
+<div class="mis-pedidos-container">
+  <h1>Mis pedidos</h1>
+
+  <div *ngIf="pedidos.length > 0; else sinPedidos">
+    <div class="pedido-card" *ngFor="let pedido of pedidos">
+      <span class="titulo">{{ pedido.disenyo.titulo }}</span>
+      <span class="precio">{{ pedido.disenyo.precio }}€</span>
+      <span class="comprador">{{ pedido.comprador.usuario.nombre }} {{ pedido.comprador.usuario.apellidos }}</span>
+      <span class="fecha">{{ pedido.fecha | date:'dd/MM/yyyy' }}</span>
+    </div>
+  </div>
+
+  <ng-template #sinPedidos>
+    <p class="mensaje-vacio">Aún no tienes ningún pedido.</p>
+  </ng-template>
+</div>

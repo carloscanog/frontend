@@ -1,0 +1,31 @@
+<div class="nuevo-disenyo-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Rellena los siguientes datos para añadir el nuevo diseño</h2>
+
+    <input
+      type="text"
+      placeholder="Título"
+      formControlName="titulo"
+    />
+
+    <input
+      type="text"
+      placeholder="Etiquetas (separadas por comas)"
+      formControlName="etiquetas"
+    />
+
+    <input
+      type="number"
+      placeholder="Precio"
+      formControlName="precio"
+    />
+
+    <input
+      type="file"
+      (change)="onImagenSeleccionada($event)"
+      accept="image/*"
+    />
+
+    <button type="submit" [disabled]="form.invalid || !imagenSeleccionada">Continuar</button>
+  </form>
+</div>

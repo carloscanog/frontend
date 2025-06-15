@@ -1,0 +1,25 @@
+<div class="nuevo-tatuaje-container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Rellena los siguientes datos para añadir el nuevo tatuaje</h2>
+
+    <input
+      type="text"
+      placeholder="Título"
+      formControlName="titulo"
+    />
+
+    <input
+      type="text"
+      placeholder="Etiquetas (separadas por comas)"
+      formControlName="etiquetas"
+    />
+
+    <input
+      type="file"
+      (change)="onImagenSeleccionada($event)"
+      accept="image/*"
+    />
+
+    <button type="submit" [disabled]="form.invalid || !imagenSeleccionada">Continuar</button>
+  </form>
+</div>

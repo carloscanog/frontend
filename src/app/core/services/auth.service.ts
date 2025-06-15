@@ -35,7 +35,7 @@ export class AuthService {
 
   // Obtener usuario identificado
   obtenerUsuarioActual(): Observable<any> {
-    return this.http.get(`${this.baseUrl}/me`);
+    return this.http.get(`${this.baseUrl}/profile/me`);
   }
 
   // Registro de usuario

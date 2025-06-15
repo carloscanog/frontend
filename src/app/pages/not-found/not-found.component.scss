@@ -1,0 +1,33 @@
+.not-found-container {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  margin-top: 10vh;
+  padding: 2rem;
+  color: #1b3c32;
+
+  h1 {
+    font-size: 6rem;
+    margin-bottom: 1rem;
+    color: #2e7d60; // verde principal
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    background-color: #2e7d60;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #24664e;
+    }
+  }
+}
