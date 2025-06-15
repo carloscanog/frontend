@@ -23,12 +23,12 @@ export class EditarPerfilClienteComponent implements OnInit {
 
     ngOnInit(): void {
         this.profileService.obtenerPerfil().subscribe(res => {
-        this.perfil = res.perfil;
+            this.perfil = res.perfil;
 
-        this.form = this.fb.group({
-            ciudad: [this.perfil.ciudad],
-            intereses: [this.perfil.intereses?.join(',')]
-        });
+            this.form = this.fb.group({
+                ciudad: [this.perfil.ciudad],
+                intereses: [this.perfil.intereses?.join(',')]
+            });
         });
     }
 

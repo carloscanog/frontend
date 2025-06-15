@@ -8,10 +8,14 @@
 
     <div class="info">
       <h2>{{ tatuaje.titulo }}</h2>
-      <p><strong>Autor:</strong> {{ tatuaje.autor.usuario.nombre }} {{ tatuaje.autor.usuario.apellidos }}</p>
+      <p *ngIf="!esAutor"><strong>Autor:</strong> {{ tatuaje.autor.usuario.nombre }} {{ tatuaje.autor.usuario.apellidos }}</p>
       <p *ngIf="tatuaje.etiquetas?.length"><strong>Etiquetas:</strong> {{ tatuaje.etiquetas.join(', ') }}</p>
 
-      <button class="btn-eliminar" (click)="eliminarTatuaje()">Eliminar tatuaje</button>
+      <button *ngIf="!esAutor" class="btn-explorar" [routerLink]="['/ver-otro-perfil', tatuaje.autor.usuario.id]">
+        Explorar su perfil
+      </button>
+
+      <button *ngIf="esAutor" class="btn-eliminar" (click)="eliminarTatuaje()">Eliminar tatuaje</button>
     </div>
   </div>
 </div>

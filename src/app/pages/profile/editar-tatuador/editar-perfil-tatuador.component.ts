@@ -23,15 +23,15 @@ export class EditarPerfilTatuadorComponent implements OnInit {
 
     ngOnInit(): void {
         this.profileService.obtenerPerfil().subscribe(res => {
-        this.perfil = res.perfil;
+            this.perfil = res.perfil;
 
-        this.form = this.fb.group({
-            biografia: [this.perfil.biografia],
-            ubicacion: [this.perfil.ubicacion],
-            estilos: [this.perfil.estilos?.join(', ')],
-            instagram: [this.perfil.instagram],
-            tiktok: [this.perfil.tiktok]
-        });
+            this.form = this.fb.group({
+                    biografia: [this.perfil.biografia],
+                    ubicacion: [this.perfil.ubicacion],
+                    estilos: [this.perfil.estilos?.join(', ')],
+                    instagram: [this.perfil.instagram],
+                    tiktok: [this.perfil.tiktok]
+                });
         });
     }
 

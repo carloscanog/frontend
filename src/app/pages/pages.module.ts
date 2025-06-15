@@ -13,6 +13,8 @@ import { NuevoDisenyoComponent } from './disenyos/nuevo-disenyo/nuevo-disenyo.co
 import { DetalleDisenyoComponent } from './disenyos/detalle-disenyo/detalle-disenyo.component';
 import { MisPedidosComponent } from './pedidos/mis-pedidos/mis-pedidos.component';
 import { EditarPerfilClienteComponent } from './profile/editar-cliente/editar-perfil-cliente.component';
+import { MuroTatuajesComponent } from './tatuajes/muro-tatuajes/muro-tatuajes.component';
+import { VerOtroPerfilComponent } from './profile/ver-otro-perfil/ver-otro-perfil.component';
 
 
 
@@ -28,7 +30,9 @@ import { EditarPerfilClienteComponent } from './profile/editar-cliente/editar-pe
     NuevoDisenyoComponent,
     MisDisenyosComponent,
     DetalleDisenyoComponent,
-    MisPedidosComponent
+    MisPedidosComponent,
+    MuroTatuajesComponent,
+    VerOtroPerfilComponent
   ],
   imports: [
     CommonModule,

@@ -3,12 +3,26 @@
 <div class="mis-pedidos-container">
   <h1>Mis pedidos</h1>
 
-  <div *ngIf="pedidos.length > 0; else sinPedidos">
-    <div class="pedido-card" *ngFor="let pedido of pedidos">
-      <span class="titulo">{{ pedido.disenyo.titulo }}</span>
-      <span class="precio">{{ pedido.disenyo.precio }}€</span>
-      <span class="comprador">{{ pedido.comprador.usuario.nombre }} {{ pedido.comprador.usuario.apellidos }}</span>
-      <span class="fecha">{{ pedido.fecha | date:'dd/MM/yyyy' }}</span>
+  <div *ngIf="pedidos.length > 0 && rol === 'TATUADOR' || rol === 'CLIENTE'; else sinPedidos">
+    <div *ngIf="rol === 'TATUADOR'">
+      <div class="pedido-card" *ngFor="let pedido of pedidos">
+        <span class="titulo">{{ pedido.disenyo.titulo }}</span>
+        <span class="precio">{{ pedido.disenyo.precio }}€</span>
+        <span class="comprador">{{ pedido.comprador.usuario.nombre }} {{ pedido.comprador.usuario.apellidos }}</span>
+        <span class="fecha">{{ pedido.fecha | date:'dd/MM/yyyy' }}</span>
+      </div>
+    </div>
+    <div *ngIf="rol === 'CLIENTE'">
+      <div class="pedido-card" *ngFor="let pedido of pedidos">
+        <span class="titulo">{{ pedido.disenyo.titulo }}</span>
+        <span class="precio">{{ pedido.disenyo.precio }}€</span>
+        <span class="comprador">{{ pedido.vendedor.usuario.nombre }} {{ pedido.vendedor.usuario.apellidos }}</span>
+        <span class="fecha">{{ pedido.fecha | date:'dd/MM/yyyy' }}</span>
+
+        <button class="btn-descargar" (click)="descargarImagen(pedido.disenyo.imagen)">
+          Descargar imagen
+        </button>
+      </div>
     </div>
   </div>
 

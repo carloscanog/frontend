@@ -1,19 +1,11 @@
 <app-navbar></app-navbar>
-<div class="profile-container" *ngIf="perfil && rol">
-  <div class="profile-card">
-    <div class="profile-header">
+<div class="ver-otro-perfil-container" *ngIf="perfil && rol">
+  <div class="ver-otro-perfil-card">
+    <div class="ver-otro-perfil-header">
       <div class="avatar-wrapper">
         <img [src]="perfil.fotoPerfil ? 'http://localhost:8080' + perfil.fotoPerfil : 'http://localhost:8080/uploads/usuarios/default-avatar.svg'"
           alt="Avatar"
           class="avatar"/>
-      </div>
-      <div class="upload-foto">
-        <label for="fotoPerfil">Actualizar foto de perfil:</label>
-        <input type="file" (change)="onFileSelected($event)">
-        <button class="edit-button" (click)="subirFoto()" [disabled]="subiendoFoto || !selectedFile">
-          {{ subiendoFoto ? 'Subiendo...' : 'Guardar imagen' }}
-        </button>
-        <p *ngIf="mensajeFoto" class="mensaje-foto">{{ mensajeFoto }}</p>
       </div>
       <div class="name-block">
         <h2 class="nombre">{{ perfil.nombre }} {{ perfil.apellidos }}</h2>
@@ -33,17 +25,6 @@
       <ng-container *ngIf="rol === 'CLIENTE'">
         <p><strong>Ciudad:</strong> {{ perfil.ciudad }}</p>
         <p><strong>Estilos e intereses:</strong> {{ perfil.intereses?.join(', ') }}</p>
-      </ng-container>
-    </div>
-
-    <button class="btn-logout" (click)="cerrarSesion()">Cerrar sesión</button>
-
-    <div class="profile-footer">
-      <ng-container *ngIf="rol === 'TATUADOR'">
-        <button class="edit-button" (click)="router.navigate(['/profile/editar-tatuador'])">Editar</button>
-      </ng-container>
-      <ng-container *ngIf="rol === 'CLIENTE'">
-        <button class="edit-button" (click)="router.navigate(['/profile/editar-cliente'])">Editar</button>
       </ng-container>
     </div>
   </div>

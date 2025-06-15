@@ -18,6 +18,8 @@ import { NuevoDisenyoComponent } from './pages/disenyos/nuevo-disenyo/nuevo-dise
 import { DetalleDisenyoComponent } from './pages/disenyos/detalle-disenyo/detalle-disenyo.component';
 import { MisPedidosComponent } from './pages/pedidos/mis-pedidos/mis-pedidos.component';
 import { EditarPerfilClienteComponent } from './pages/profile/editar-cliente/editar-perfil-cliente.component';
+import { MuroTatuajesComponent } from './pages/tatuajes/muro-tatuajes/muro-tatuajes.component';
+import { VerOtroPerfilComponent } from './pages/profile/ver-otro-perfil/ver-otro-perfil.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -31,12 +33,14 @@ const routes: Routes = [
   { path: 'profile/editar-cliente', component: EditarPerfilClienteComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'mis-tatuajes', component: MisTatuajesComponent },
+  { path: 'muro-tatuajes', component: MuroTatuajesComponent },
   { path: 'tatuajes/nuevo', component: NuevoTatuajeComponent },
   { path: 'tatuajes/:id', component: DetalleTatuajeComponent },
   { path: "mis-disenyos", component: MisDisenyosComponent },
   { path: "disenyos/nuevo", component: NuevoDisenyoComponent },
   { path: "disenyos/:id", component: DetalleDisenyoComponent },
   { path: "mis-pedidos", component: MisPedidosComponent },
+  { path: "ver-otro-perfil/:id", component: VerOtroPerfilComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 
