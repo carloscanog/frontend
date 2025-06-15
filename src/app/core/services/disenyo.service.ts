@@ -25,4 +25,8 @@ export class DisenyoService {
         return this.http.delete(`/disenyos/${id}`);
     }
 
+    obtenerTodosDisenyos(): Observable<any[]> {
+        return this.http.get<any[]>('/disenyos/muro');
+    }
+
 }
