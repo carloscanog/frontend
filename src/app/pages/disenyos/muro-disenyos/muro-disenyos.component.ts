@@ -9,6 +9,7 @@ import { DisenyoService } from '../../../core/services/disenyo.service';
 })
 export class MuroDisenyosComponent implements OnInit {
     disenyos: any[] = [];
+    filtroEtiqueta: string = '';
 
     constructor(private disenyoService: DisenyoService) {}
 
@@ -17,6 +18,19 @@ export class MuroDisenyosComponent implements OnInit {
             next: (disenyos) => this.disenyos = disenyos,
             error: (err) => console.error('Error al cargar los diseños:', err)
         });
+    }
+
+    disenyosFiltrados(): any[] {
+        if (!this.filtroEtiqueta.trim()) {
+            return this.disenyos;
+        }
+
+        const filtro = this.filtroEtiqueta.toLowerCase();
+
+        return this.disenyos.filter(d =>
+            d.etiquetas?.some((e: string) => e.toLowerCase().includes(filtro)) ||
+            d.titulo.toLowerCase().includes(filtro)
+        );
     }
     
 }

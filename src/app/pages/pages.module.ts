@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './profile/profile.component';
 import { EditarPerfilTatuadorComponent } from './profile/editar-tatuador/editar-perfil-tatuador.component';
 import { NuevoTatuajeComponent } from './tatuajes/nuevo-tatuaje/nuevo-tatuaje.component';
@@ -43,7 +43,8 @@ import { TatuajesTatuadorComponent } from './tatuajes/tatuajes-tatuador/tatuajes
   imports: [
     CommonModule,
     ReactiveFormsModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ]
 })
 export class PagesModule { }

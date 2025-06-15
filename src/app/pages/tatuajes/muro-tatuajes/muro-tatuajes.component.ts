@@ -9,6 +9,7 @@ import { TatuajeService } from '../../../core/services/tatuaje.service';
 })
 export class MuroTatuajesComponent implements OnInit {
     tatuajes: any[] = [];
+    filtroEtiqueta: string = '';
 
     constructor(private tatuajeService: TatuajeService) {}
 
@@ -17,6 +18,19 @@ export class MuroTatuajesComponent implements OnInit {
             next: (tatuajes) => this.tatuajes = tatuajes,
             error: (err) => console.error('Error al cargar los tatuajes:', err)
         });
+    }
+
+    tatuajesFiltrados(): any[] {
+        if (!this.filtroEtiqueta.trim()) {
+            return this.tatuajes;
+        }
+
+        const filtro = this.filtroEtiqueta.toLowerCase();
+
+        return this.tatuajes.filter(t =>
+            t.etiquetas?.some((e: string) => e.toLowerCase().includes(filtro)) ||
+            t.titulo.toLowerCase().includes(filtro)
+        );
     }
     
 }
