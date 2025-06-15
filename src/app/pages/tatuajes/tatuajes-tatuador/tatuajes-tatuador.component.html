@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+
+<div class="tatuajes-tatuador-container">
+  <div class="encabezado">
+    <h1>Tatuajes del artista</h1>
+  </div>
+
+  <div class="galeria">
+    <div class="tatuaje" *ngFor="let tatuaje of tatuajes" [routerLink]="['/tatuajes', tatuaje.id]">
+      <img [src]="'http://localhost:8080' + tatuaje.imagen" alt="Tatuaje" />
+      <p class="titulo">{{ tatuaje.titulo }}</p>
+    </div>
+  </div>
+</div>

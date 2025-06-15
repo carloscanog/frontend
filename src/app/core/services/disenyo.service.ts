@@ -29,4 +29,8 @@ export class DisenyoService {
         return this.http.get<any[]>('/disenyos/muro');
     }
 
+    obtenerDisenyosTatuador(id: number): Observable<any[]> {
+        return this.http.get<any[]>(`/tatuadores/${id}/disenyos`);
+    }
+
 }

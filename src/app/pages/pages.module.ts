@@ -16,6 +16,8 @@ import { EditarPerfilClienteComponent } from './profile/editar-cliente/editar-pe
 import { MuroTatuajesComponent } from './tatuajes/muro-tatuajes/muro-tatuajes.component';
 import { VerOtroPerfilComponent } from './profile/ver-otro-perfil/ver-otro-perfil.component';
 import { MuroDisenyosComponent } from './disenyos/muro-disenyos/muro-disenyos.component';
+import { DisenyosTatuadorComponent } from './disenyos/disenyos-tatuador/disenyos-tatuador.component';
+import { TatuajesTatuadorComponent } from './tatuajes/tatuajes-tatuador/tatuajes-tatuador.component';
 
 
 
@@ -34,6 +36,8 @@ import { MuroDisenyosComponent } from './disenyos/muro-disenyos/muro-disenyos.co
     MisPedidosComponent,
     MuroTatuajesComponent,
     MuroDisenyosComponent,
+    DisenyosTatuadorComponent,
+    TatuajesTatuadorComponent,
     VerOtroPerfilComponent
   ],
   imports: [

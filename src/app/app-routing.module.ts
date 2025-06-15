@@ -21,6 +21,8 @@ import { EditarPerfilClienteComponent } from './pages/profile/editar-cliente/edi
 import { MuroTatuajesComponent } from './pages/tatuajes/muro-tatuajes/muro-tatuajes.component';
 import { VerOtroPerfilComponent } from './pages/profile/ver-otro-perfil/ver-otro-perfil.component';
 import { MuroDisenyosComponent } from './pages/disenyos/muro-disenyos/muro-disenyos.component';
+import { DisenyosTatuadorComponent } from './pages/disenyos/disenyos-tatuador/disenyos-tatuador.component';
+import { TatuajesTatuadorComponent } from './pages/tatuajes/tatuajes-tatuador/tatuajes-tatuador.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -43,6 +45,8 @@ const routes: Routes = [
   { path: "disenyos/:id", component: DetalleDisenyoComponent },
   { path: "mis-pedidos", component: MisPedidosComponent },
   { path: "ver-otro-perfil/:id", component: VerOtroPerfilComponent },
+  { path: "tatuadores/:id/disenyos", component: DisenyosTatuadorComponent },
+  { path: "tatuadores/:id/tatuajes", component: TatuajesTatuadorComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 
