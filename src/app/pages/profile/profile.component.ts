@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from './services/profile.service';
 import { Router } from '@angular/router';
+import { ProfileService } from '../../core/services/profile.service';
 
 @Component({
   selector: 'app-profile',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ProfileComponent implements OnInit {
   perfil: any = null;
-  rol: 'CLIENTE' | 'TATUADOR' | null = null;
+  rol: 'ROL_CLIENTE' | 'ROL_TATUADOR' | null = null;
   selectedFile: File | null = null;
   subiendoFoto: boolean = false;
   mensajeFoto: string | null = null;

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../../profile/services/profile.service';
 import { PedidoService } from '../../../core/services/pedido.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { PedidoService } from '../../../core/services/pedido.service';
 export class MisPedidosComponent implements OnInit {
     pedidos: any[] = [];
 
-    constructor(private pedidoService: PedidoService, private profileService: ProfileService) {}
+    constructor(private pedidoService: PedidoService) {}
 
     ngOnInit(): void {
         this.pedidoService.obtenerMisPedidos().subscribe({

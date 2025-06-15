@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProfileService } from '../pages/profile/services/profile.service';
+import { ProfileService } from '../core/services/profile.service';
 
 @Component({
   selector: 'app-navbar',

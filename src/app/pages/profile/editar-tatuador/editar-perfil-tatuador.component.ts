@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ProfileService } from '../services/profile.service';
 import { Router } from '@angular/router';
 import { TatuadorService } from '../../../core/services/tatuador.service';
+import { ProfileService } from '../../../core/services/profile.service';
 
 @Component({
   selector: 'app-editar-perfil-tatuador',

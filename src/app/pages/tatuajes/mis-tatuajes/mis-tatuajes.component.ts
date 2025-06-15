@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { TatuajeService } from '../../../core/services/tatuaje.service';
-import { ProfileService } from '../../profile/services/profile.service';
 
 @Component({
     selector: 'app-mis-tatuajes',
@@ -11,7 +10,7 @@ import { ProfileService } from '../../profile/services/profile.service';
 export class MisTatuajesComponent implements OnInit {
     tatuajes: any[] = [];
 
-    constructor(private tatuajeService: TatuajeService, private profileService: ProfileService) {}
+    constructor(private tatuajeService: TatuajeService) {}
 
     ngOnInit(): void {
         this.tatuajeService.obtenerMisTatuajes().subscribe({
