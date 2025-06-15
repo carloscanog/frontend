@@ -33,5 +33,8 @@
         <button class="boton-principal" [disabled]="loginForm.invalid">Continuar</button>
       </div>
     </form>
+    <div *ngIf="loginError" class="login-error">
+      {{ loginError }}
+    </div>
   </div>
 </div>
