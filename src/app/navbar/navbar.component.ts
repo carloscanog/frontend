@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ProfileService } from '../pages/profile/services/profile.service';
+import { ProfileService } from '../core/services/profile.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,6 +10,7 @@ import { ProfileService } from '../pages/profile/services/profile.service';
 })
 export class NavbarComponent implements OnInit {
   fotoPerfil: string | null = null;
+  rol: 'CLIENTE' | 'TATUADOR' | null = null;
 
   constructor(public router: Router, private profileService: ProfileService) {}
 
@@ -23,6 +24,7 @@ export class NavbarComponent implements OnInit {
         this.fotoPerfil = res.perfil.fotoPerfil
           ? 'http://localhost:8080' + res.perfil.fotoPerfil
           : 'assets/icons/default-avatar.svg';
+        this.rol = res.rol;
       },
       error: (err) => {
         console.error('Error al cargar la foto de perfil:', err);

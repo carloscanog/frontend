@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ProfileService } from '../../profile/services/profile.service';
 import { DisenyoService } from '../../../core/services/disenyo.service';
 
 @Component({
@@ -11,7 +10,7 @@ import { DisenyoService } from '../../../core/services/disenyo.service';
 export class MisDisenyosComponent implements OnInit {
     disenyos: any[] = [];
 
-    constructor(private disenyoService: DisenyoService, private profileService: ProfileService) {}
+    constructor(private disenyoService: DisenyoService) {}
 
     ngOnInit(): void {
         this.disenyoService.obtenerMisDisenyos().subscribe({

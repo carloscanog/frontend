@@ -25,4 +25,12 @@ export class TatuajeService {
         return this.http.delete(`/tatuajes/${id}`);
     }
 
+    obtenerTodosTatuajes(): Observable<any[]> {
+        return this.http.get<any[]>('/tatuajes/muro');
+    }
+
+    obtenerTatuajesTatuador(id: number): Observable<any[]> {
+        return this.http.get<any[]>(`/tatuadores/${id}/tatuajes`);
+    }
+
 }

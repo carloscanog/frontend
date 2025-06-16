@@ -17,6 +17,12 @@ import { MisDisenyosComponent } from './pages/disenyos/mis-disenyos/mis-disenyos
 import { NuevoDisenyoComponent } from './pages/disenyos/nuevo-disenyo/nuevo-disenyo.component';
 import { DetalleDisenyoComponent } from './pages/disenyos/detalle-disenyo/detalle-disenyo.component';
 import { MisPedidosComponent } from './pages/pedidos/mis-pedidos/mis-pedidos.component';
+import { EditarPerfilClienteComponent } from './pages/profile/editar-cliente/editar-perfil-cliente.component';
+import { MuroTatuajesComponent } from './pages/tatuajes/muro-tatuajes/muro-tatuajes.component';
+import { VerOtroPerfilComponent } from './pages/profile/ver-otro-perfil/ver-otro-perfil.component';
+import { MuroDisenyosComponent } from './pages/disenyos/muro-disenyos/muro-disenyos.component';
+import { DisenyosTatuadorComponent } from './pages/disenyos/disenyos-tatuador/disenyos-tatuador.component';
+import { TatuajesTatuadorComponent } from './pages/tatuajes/tatuajes-tatuador/tatuajes-tatuador.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -26,15 +32,21 @@ const routes: Routes = [
   { path: 'registro/elegir-rol', component: ElegirRolComponent },
   { path: 'registro/tatuador', component: RegistroTatuadorComponent },
   { path: 'registro/cliente', component: RegistroClienteComponent },
-  { path: 'profile/editar', component: EditarPerfilTatuadorComponent },
+  { path: 'profile/editar-tatuador', component: EditarPerfilTatuadorComponent },
+  { path: 'profile/editar-cliente', component: EditarPerfilClienteComponent },
   { path: 'not-found', component: NotFoundComponent },
   { path: 'mis-tatuajes', component: MisTatuajesComponent },
+  { path: 'muro-tatuajes', component: MuroTatuajesComponent },
   { path: 'tatuajes/nuevo', component: NuevoTatuajeComponent },
   { path: 'tatuajes/:id', component: DetalleTatuajeComponent },
   { path: "mis-disenyos", component: MisDisenyosComponent },
+  { path: 'muro-disenyos', component: MuroDisenyosComponent },
   { path: "disenyos/nuevo", component: NuevoDisenyoComponent },
   { path: "disenyos/:id", component: DetalleDisenyoComponent },
   { path: "mis-pedidos", component: MisPedidosComponent },
+  { path: "ver-otro-perfil/:id", component: VerOtroPerfilComponent },
+  { path: "tatuadores/:id/disenyos", component: DisenyosTatuadorComponent },
+  { path: "tatuadores/:id/tatuajes", component: TatuajesTatuadorComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 

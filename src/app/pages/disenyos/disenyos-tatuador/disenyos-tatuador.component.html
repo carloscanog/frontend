@@ -1,0 +1,14 @@
+<app-navbar></app-navbar>
+
+<div class="disenyos-tatuador-container">
+  <div class="encabezado">
+    <h1>Diseños del artista</h1>
+  </div>
+
+  <div class="galeria">
+    <div class="disenyo" *ngFor="let disenyo of disenyos" [routerLink]="['/disenyos', disenyo.id]">
+      <img [src]="'http://localhost:8080' + disenyo.imagen" alt="Disenyo" />
+      <p class="titulo">{{ disenyo.titulo }}</p>
+    </div>
+  </div>
+</div>

@@ -12,6 +12,7 @@ export class LoginComponent {
   email: string = '';
   password: string = '';
   error: string | null = null;
+  loginError: string | null = null;
 
   constructor(
     private authService: AuthService,
@@ -27,12 +28,11 @@ export class LoginComponent {
     this.authService.login({ email: this.email, password: this.password }).subscribe({
       next: (res) => {
         this.authService.saveToken(res.token);
-        this.error = null;
         this.router.navigate(['/profile']);
       },
       error: (err) => {
         console.error('Error al iniciar sesión:', err);
-        this.error = 'Credenciales incorrectas o servidor no disponible.';
+        this.loginError = 'Email o contraseña incorrectos.';
       }
     });
   }

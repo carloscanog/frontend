@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+
+<div class="muro-disenyos-container">
+  <div class="encabezado">
+    <input
+      type="text"
+      placeholder="Buscar por etiqueta o título..."
+      [(ngModel)]="filtroEtiqueta"
+      class="input-buscador"
+    />
+  </div>
+
+  <div class="galeria">
+    <div class="disenyo" *ngFor="let disenyo of disenyosFiltrados()" [routerLink]="['/disenyos', disenyo.id]">
+      <img [src]="'http://localhost:8080' + disenyo.imagen" alt="Disenyo" />
+      <p class="titulo">{{ disenyo.titulo }}</p>
+    </div>
+  </div>
+</div>

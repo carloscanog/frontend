@@ -3,8 +3,10 @@
         <span class="logo">
         Tatto<span class="logo-accent">u</span>
         </span>
-        <a routerLink="/mis-tatuajes" routerLinkActive="activo">Mis tatuajes</a>
-        <a routerLink="/mis-disenyos" routerLinkActive="activo">Mis diseños</a>
+        <a *ngIf="rol === 'TATUADOR'" routerLink="/mis-tatuajes" routerLinkActive="activo">Mis tatuajes</a>
+        <a *ngIf="rol === 'CLIENTE'" routerLink="/muro-tatuajes" routerLinkActive="activo">Tatuajes</a>
+        <a *ngIf="rol === 'TATUADOR'" routerLink="/mis-disenyos" routerLinkActive="activo">Mis diseños</a>
+        <a *ngIf="rol === 'CLIENTE'" routerLink="/muro-disenyos" routerLinkActive="activo">Diseños</a>
         <a routerLink="/mis-pedidos" routerLinkActive="activo">Pedidos</a>
     </div>
     <div class="navbar-right">

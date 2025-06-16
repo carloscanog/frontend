@@ -42,7 +42,7 @@
 }
 
 .btn-eliminar {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   background-color: #e74c3c;
   color: white;
   border: none;
@@ -55,5 +55,22 @@
 
   &:hover {
     background-color: #c0392b;
+  }
+}
+
+.btn-explorar {
+  margin-top: 1rem;
+  background-color: #6cc070;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: start;
+
+  &:hover {
+    background-color: #519e56;
   }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TatuajeService } from '../../../core/services/tatuaje.service';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-detalle-tatuaje',
@@ -10,20 +11,33 @@ import { TatuajeService } from '../../../core/services/tatuaje.service';
 })
 export class DetalleTatuajeComponent implements OnInit {
     tatuaje: any;
+    esAutor: boolean = false;
 
     constructor(
         private router: Router,
         private route: ActivatedRoute,
-        private tatuajeService: TatuajeService
+        private tatuajeService: TatuajeService,
+        private authService: AuthService
     ) {}
 
     ngOnInit(): void {
         const id = this.route.snapshot.paramMap.get('id');
         if (id) {
-        this.tatuajeService.obtenerTatuajePorId(+id).subscribe({
-            next: (data) => this.tatuaje = data,
-            error: () => console.error('Tatuaje no encontrado')
-        });
+            this.tatuajeService.obtenerTatuajePorId(+id).subscribe({
+                next: (data) => {
+                    this.tatuaje = data;
+
+                    this.authService.obtenerUsuarioActual().subscribe({
+                        next: (usuario) => {
+                            this.esAutor = usuario.usuarioId === this.tatuaje.autor.usuario.id;
+                        },
+                        error: () => {
+                            this.esAutor = false;
+                        }
+                    });
+                },
+                error: () => this.router.navigate(['/tatuajes/mios'])
+            });
         }
     }
 
