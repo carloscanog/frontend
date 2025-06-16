@@ -18,6 +18,8 @@ import { VerOtroPerfilComponent } from './profile/ver-otro-perfil/ver-otro-perfi
 import { MuroDisenyosComponent } from './disenyos/muro-disenyos/muro-disenyos.component';
 import { DisenyosTatuadorComponent } from './disenyos/disenyos-tatuador/disenyos-tatuador.component';
 import { TatuajesTatuadorComponent } from './tatuajes/tatuajes-tatuador/tatuajes-tatuador.component';
+import { CompraExitosaComponent } from './compras/compra-exitosa/compra-exitosa.component';
+import { CompraCanceladaComponent } from './compras/compra-cancelada/compra-cancelada.component';
 
 
 
@@ -38,7 +40,9 @@ import { TatuajesTatuadorComponent } from './tatuajes/tatuajes-tatuador/tatuajes
     MuroDisenyosComponent,
     DisenyosTatuadorComponent,
     TatuajesTatuadorComponent,
-    VerOtroPerfilComponent
+    VerOtroPerfilComponent,
+    CompraExitosaComponent,
+    CompraCanceladaComponent
   ],
   imports: [
     CommonModule,

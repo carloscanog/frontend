@@ -23,6 +23,8 @@ import { VerOtroPerfilComponent } from './pages/profile/ver-otro-perfil/ver-otro
 import { MuroDisenyosComponent } from './pages/disenyos/muro-disenyos/muro-disenyos.component';
 import { DisenyosTatuadorComponent } from './pages/disenyos/disenyos-tatuador/disenyos-tatuador.component';
 import { TatuajesTatuadorComponent } from './pages/tatuajes/tatuajes-tatuador/tatuajes-tatuador.component';
+import { CompraExitosaComponent } from './pages/compras/compra-exitosa/compra-exitosa.component';
+import { CompraCanceladaComponent } from './pages/compras/compra-cancelada/compra-cancelada.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -47,6 +49,8 @@ const routes: Routes = [
   { path: "ver-otro-perfil/:id", component: VerOtroPerfilComponent },
   { path: "tatuadores/:id/disenyos", component: DisenyosTatuadorComponent },
   { path: "tatuadores/:id/tatuajes", component: TatuajesTatuadorComponent },
+  { path: "compra-exitosa", component: CompraExitosaComponent },
+  { path: "compra-cancelada", component: CompraCanceladaComponent },
   { path: '**', redirectTo: 'not-found' }
 ];
 

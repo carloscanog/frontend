@@ -53,5 +53,15 @@
         "target": "http://localhost:8080",
         "secure": false,
         "changeOrigin": true
+    },
+    "/stripe": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true
+    },
+    "/stripe/webhook": {
+        "target": "http://localhost:8080",
+        "secure": false,
+        "changeOrigin": true
     }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DisenyoService } from '../../../core/services/disenyo.service';
 import { AuthService } from '../../../core/services/auth.service';
+import { StripeService } from '../../../core/services/stripe.service';
 
 @Component({
   selector: 'app-detalle-disenyo',
@@ -12,18 +13,20 @@ import { AuthService } from '../../../core/services/auth.service';
 export class DetalleDisenyoComponent implements OnInit {
     disenyo: any;
     esAutor: boolean = false;
+    id: any;
 
     constructor(
         private router: Router,
         private route: ActivatedRoute,
         private disenyoService: DisenyoService,
-        private authService: AuthService
+        private authService: AuthService,
+        private stripeService: StripeService
     ) {}
 
     ngOnInit(): void {
-        const id = this.route.snapshot.paramMap.get('id');
-        if (id) {
-            this.disenyoService.obtenerDisenyoPorId(+id).subscribe({
+        this.id = this.route.snapshot.paramMap.get('id');
+        if (this.id) {
+            this.disenyoService.obtenerDisenyoPorId(+this.id).subscribe({
                 next: (data) => {
                     this.disenyo = data;
 
@@ -47,6 +50,18 @@ export class DetalleDisenyoComponent implements OnInit {
 
         this.disenyoService.eliminarDisenyo(this.disenyo.id).subscribe(() => {
             this.router.navigate(['/mis-disenyos']);
+        });
+    }
+
+    comprar() {
+        this.stripeService.createCheckoutSession(this.id).subscribe({
+            next: (response) => {
+                window.location.href = response.url; // Redirige a Stripe Checkout
+            },
+            error: (err) => {
+                console.error('Error al crear la sesión de Stripe:', err);
+                alert('No se pudo iniciar la compra. Inténtalo de nuevo más tarde.');
+            },
         });
     }
 

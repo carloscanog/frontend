@@ -16,7 +16,7 @@
         Explorar su perfil
       </button>
 
-      <button *ngIf="!esAutor" class="btn-explorar" [routerLink]="['/pedidos/nuevo', disenyo.id]">
+      <button (click)="comprar()" *ngIf="!esAutor" class="btn-explorar">
         Comprar diseño
       </button>
 
