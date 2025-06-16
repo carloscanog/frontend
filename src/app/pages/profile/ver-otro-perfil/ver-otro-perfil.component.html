@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+<div class="ver-otro-perfil-container" *ngIf="perfil && rol">
+  <div class="ver-otro-perfil-card">
+    <div class="ver-otro-perfil-header">
+      <div class="avatar-wrapper">
+        <img [src]="perfil.fotoPerfil ? 'http://localhost:8080' + perfil.fotoPerfil : 'http://localhost:8080/uploads/usuarios/default-avatar.svg'"
+          alt="Avatar"
+          class="avatar"/>
+      </div>
+      <div class="name-block">
+        <h2 class="nombre">{{ perfil.nombre }} {{ perfil.apellidos }}</h2>
+        <p class="rol">({{ rol === 'TATUADOR' ? 'Tatuador/a' : 'Cliente' }})</p>
+      </div>
+    </div>
+
+    <div class="profile-body">
+      <ng-container *ngIf="rol === 'TATUADOR'">
+        <p class="biografia">{{ perfil.biografia }}</p>
+        <p><strong>Ubicación:</strong> {{ perfil.ubicacion }}</p>
+        <p><strong>Estilos:</strong> {{ perfil.estilos?.join(', ') }}</p>
+        <p><strong>Instagram:</strong> {{ perfil.instagram }}</p>
+        <p><strong>TikTok:</strong> {{ perfil.tiktok }}</p>
+      </ng-container>
+
+      <ng-container *ngIf="rol === 'CLIENTE'">
+        <p><strong>Ciudad:</strong> {{ perfil.ciudad }}</p>
+        <p><strong>Estilos e intereses:</strong> {{ perfil.intereses?.join(', ') }}</p>
+      </ng-container>
+    </div>
+
+    <button *ngIf="rol === 'TATUADOR'" class="btn-explorar" [routerLink]="['/tatuadores', perfil.id, 'disenyos']">
+        Explorar diseños
+    </button>
+    <button *ngIf="rol === 'TATUADOR'" class="btn-explorar" [routerLink]="['/tatuadores', perfil.id, 'tatuajes']">
+        Explorar tatuajes
+    </button>
+  </div>
+</div>

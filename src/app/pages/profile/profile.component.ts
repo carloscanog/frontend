@@ -1,20 +1,73 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { ProfileService } from '../../core/services/profile.service';
+import { AuthService } from '../../core/services/auth.service';
 
 @Component({
   selector: 'app-profile',
   standalone: false,
-  templateUrl: './profile.component.html'
+  templateUrl: './profile.component.html',
+  styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  user: any;
+  perfil: any = null;
+  rol: 'CLIENTE' | 'TATUADOR' | null = null;
+  selectedFile: File | null = null;
+  subiendoFoto: boolean = false;
+  mensajeFoto: string | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private profileService: ProfileService,
+    public router: Router,
+    private authService: AuthService
+  ) {}
 
-  ngOnInit() {
-    this.http.get('http://localhost:8080/me').subscribe({
-      next: (data) => this.user = data,
-      error: (err) => console.error('Error en /me', err)
+  ngOnInit(): void {
+    this.profileService.obtenerPerfil().subscribe({
+      next: (res) => {
+        console.log('Respuesta del perfil:', res);
+        this.rol = res.rol;
+        this.perfil = res.perfil;
+      },
+      error: (err) => {
+        console.error('Error cargando perfil:', err);
+      }
     });
   }
+
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      this.selectedFile = input.files[0];
+    }
+  }
+
+  subirFoto(): void {
+    if (!this.selectedFile) return;
+
+    const formData = new FormData();
+    formData.append('archivo', this.selectedFile);
+
+    this.subiendoFoto = true;
+    this.mensajeFoto = null;
+
+    this.profileService.actualizarFotoUsuario(formData).subscribe({
+      next: (res) => {
+        this.perfil.fotoPerfil = res.fotoPerfil;
+        this.mensajeFoto = 'Foto actualizada correctamente.';
+        this.subiendoFoto = false;
+      },
+      error: (err) => {
+        console.error('Error al subir la imagen:', err);
+        this.mensajeFoto = 'Error al subir la imagen.';
+        this.subiendoFoto = false;
+      }
+    });
+  }
+
+  cerrarSesion(): void {
+    this.authService.logout();
+    this.router.navigate(['']);
+  }
+
 }

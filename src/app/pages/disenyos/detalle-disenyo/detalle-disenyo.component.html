@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+
+<div class="detalle-disenyo-container" *ngIf="disenyo">
+  <div class="contenido">
+    <div class="imagen">
+      <img [src]="'http://localhost:8080' + disenyo.imagen" alt="{{ disenyo.titulo }}" />
+    </div>
+
+    <div class="info">
+      <h2>{{ disenyo.titulo }}</h2>
+      <p *ngIf="!esAutor"><strong>Autor:</strong> {{ disenyo.autor.usuario.nombre }} {{ disenyo.autor.usuario.apellidos }}</p>
+      <p><strong>Precio:</strong> {{ disenyo.precio }} </p>
+      <p *ngIf="disenyo.etiquetas?.length"><strong>Etiquetas:</strong> {{ disenyo.etiquetas.join(', ') }}</p>
+
+      <button *ngIf="!esAutor" class="btn-explorar" [routerLink]="['/ver-otro-perfil', disenyo.autor.usuario.id]">
+        Explorar su perfil
+      </button>
+
+      <button *ngIf="!esAutor" class="btn-explorar" [routerLink]="['/pedidos/nuevo', disenyo.id]">
+        Comprar diseño
+      </button>
+
+      <button *ngIf="esAutor" class="btn-eliminar" (click)="eliminarDisenyo()">Eliminar diseño</button>
+    </div>
+  </div>
+</div>

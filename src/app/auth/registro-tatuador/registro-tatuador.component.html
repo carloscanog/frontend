@@ -1,0 +1,75 @@
+<div class="registro-wrapper">
+  <div class="registro-card">
+    <h1 class="logo">Tatto<span class="highlight">u</span></h1>
+    <p class="subtitulo">Rellena los siguientes datos para finalizar el registro</p>
+
+    <form #tatuadorForm="ngForm" (ngSubmit)="onSubmit()">
+      <input
+        type="text"
+        name="ubicacion"
+        placeholder="Ciudad donde tatúas o ubicación del estudio"
+        [(ngModel)]="ubicacion"
+        #ubicacionInput="ngModel"
+        required
+      />
+      <div class="error" *ngIf="ubicacionInput.invalid && ubicacionInput.touched">
+        Este campo es obligatorio.
+      </div>
+
+      <input
+        type="text"
+        name="estilos"
+        placeholder="Estilos (separados por comas)"
+        [(ngModel)]="estilos"
+        #estilosInput="ngModel"
+        required
+      />
+      <div class="error" *ngIf="estilosInput.invalid && estilosInput.touched">
+        Este campo es obligatorio.
+      </div>
+
+      <input
+        type="text"
+        name="instagram"
+        placeholder="Instagram"
+        [(ngModel)]="instagram"
+        #instagramInput="ngModel"
+        required
+      />
+      <div class="error" *ngIf="instagramInput.invalid && instagramInput.touched">
+        Este campo es obligatorio.
+      </div>
+
+      <input
+        type="text"
+        name="tiktok"
+        placeholder="TikTok"
+        [(ngModel)]="tiktok"
+        #tiktokInput="ngModel"
+        required
+      />
+      <div class="error" *ngIf="tiktokInput.invalid && tiktokInput.touched">
+        Este campo es obligatorio.
+      </div>
+
+      <textarea
+        name="biografia"
+        placeholder="Biografía"
+        [(ngModel)]="biografia"
+        #biografiaInput="ngModel"
+        required
+        rows="4"
+      ></textarea>
+      <div class="error" *ngIf="biografiaInput.invalid && biografiaInput.touched">
+        La biografía es obligatoria.
+      </div>
+
+      <div class="botones-superiores">
+        <button class="boton-principal" (click)="router.navigate(['/registro/elegir-rol'])">Volver</button>
+        <button class="boton-principal" [disabled]="tatuadorForm.invalid">Continuar</button>
+      </div>
+      
+      <button type="button" class="boton-cancelar" (click)="cancelar()">Cancelar</button>
+    </form>
+  </div>
+</div>

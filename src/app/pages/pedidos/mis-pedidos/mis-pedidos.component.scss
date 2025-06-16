@@ -1,0 +1,56 @@
+.mis-pedidos-container {
+  background-color: #d8fbd3;
+  min-height: 100vh;
+  padding: 2rem;
+  font-family: 'Poppins', sans-serif;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pedido-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+
+    span {
+      flex: 1;
+      text-align: center;
+
+      &.titulo {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+.mensaje-vacio {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.btn-descargar {
+  background-color: #888;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #666;
+  }
+}

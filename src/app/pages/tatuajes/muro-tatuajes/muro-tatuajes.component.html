@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+
+<div class="muro-tatuajes-container">
+  <div class="encabezado">
+    <input
+      type="text"
+      placeholder="Buscar por etiqueta o título..."
+      [(ngModel)]="filtroEtiqueta"
+      class="input-buscador"
+    />
+  </div>
+
+  <div class="galeria">
+    <div class="tatuaje" *ngFor="let tatuaje of tatuajesFiltrados()" [routerLink]="['/tatuajes', tatuaje.id]">
+      <img [src]="'http://localhost:8080' + tatuaje.imagen" alt="Tatuaje" />
+      <p class="titulo">{{ tatuaje.titulo }}</p>
+    </div>
+  </div>
+</div>

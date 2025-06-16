@@ -1,0 +1,33 @@
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <h2>Editar Perfil</h2>
+
+  <div>
+    <label for="biografia">Biografía</label>
+    <textarea id="biografia" formControlName="biografia"></textarea>
+  </div>
+
+  <div>
+    <label for="ubicacion">Ubicación</label>
+    <input id="ubicacion" type="text" formControlName="ubicacion" />
+  </div>
+
+  <div>
+    <label for="estilos">Estilos (separados por coma)</label>
+    <input id="estilos" type="text" formControlName="estilos" />
+  </div>
+
+  <div>
+    <label for="instagram">Instagram</label>
+    <input id="instagram" type="text" formControlName="instagram" />
+  </div>
+
+  <div>
+    <label for="tiktok">TikTok</label>
+    <input id="tiktok" type="text" formControlName="tiktok" />
+  </div>
+
+  <div class="botones">
+    <button type="submit">Guardar Cambios</button>
+    <button type="button" (click)="cancelar()">Cancelar</button>
+  </div>
+</form>
