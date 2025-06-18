@@ -47,8 +47,6 @@ export class RegistroTatuadorComponent {
       tiktok: this.tiktok
     };
 
-    console.log('📦 Enviar al backend (tatuador):', datosFinales);
-
     this.authService.registrarTatuador(datosFinales).subscribe({
     next: () => {
         alert('Registro completado con éxito. Ya puedes iniciar sesión.');

@@ -35,7 +35,7 @@
     transform: translateY(-2px);
 
     .highlight {
-      text-shadow: 0 0 6px #28a74588; // brillo verde
+      text-shadow: 0 0 6px #28a74588;
     }
   }
 }
@@ -90,7 +90,7 @@
 
     &:hover {
       transform: scale(1.1);
-      filter: drop-shadow(0 0 6px #28a74580); // glow verde semitransparente
+      filter: drop-shadow(0 0 6px #28a74580);
     }
   }
 }

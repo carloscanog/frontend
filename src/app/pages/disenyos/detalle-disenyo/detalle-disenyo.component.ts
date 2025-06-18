@@ -56,7 +56,7 @@ export class DetalleDisenyoComponent implements OnInit {
     comprar() {
         this.stripeService.createCheckoutSession(this.id).subscribe({
             next: (response) => {
-                window.location.href = response.url; // Redirige a Stripe Checkout
+                window.location.href = response.url;
             },
             error: (err) => {
                 console.error('Error al crear la sesión de Stripe:', err);

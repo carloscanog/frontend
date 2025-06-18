@@ -41,8 +41,6 @@ export class RegistroClienteComponent {
       intereses: interesesArray
     };
 
-    console.log('Enviar al backend (cliente):', datosFinales);
-
     this.authService.registrarCliente(datosFinales).subscribe({
       next: () => {
         alert('Registro completado con éxito. Ya puedes iniciar sesión.');
